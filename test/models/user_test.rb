@@ -18,4 +18,9 @@ class UserTest < ActiveSupport::TestCase
     @user.email = '   '
     assert_not @user.valid?
   end
+
+  test 'password should be present' do
+    @user.password = @user.password_confirmation = ' ' * 5
+    assert_not @user.valid?
+  end
 end
