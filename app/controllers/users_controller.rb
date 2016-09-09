@@ -10,6 +10,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
+      flach[:success] = 'Yahoo! Welcome to the Mini Twitter!'
       redirect_to @user
     else
       render 'new'
