@@ -7,3 +7,10 @@ User.create!(name: 'Happy User', email: 'happy@email.com', password: 'blabla', p
   password = 'password'
   User.create!(name: name, email: email, password: password, password_confirmation: password)
 end
+
+# Creating tweets
+users = User.order(:created_at).take(6)
+50.times do
+  content = Faker::Lorem.sentence(5)
+  users.each { |user| user.tweets.create!(content: content) }
+end
