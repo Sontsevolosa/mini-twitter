@@ -4,12 +4,12 @@
       h1
         = gravatar_for @user
         = @user.name
-.col-md-8
-  - if @user.tweets.any?
-    h3
-      | Tweets (
-      = @user.tweets.count
-      | )
-    ol.tweets
-      = render @tweets
-    = will_paginate @tweets
+  .col-md-8
+    - if @user.tweets.any?
+      h3
+        | Tweets (
+        = @user.tweets.count
+        | )
+      ol.tweets
+        = render @tweets
+      = will_paginate @tweets

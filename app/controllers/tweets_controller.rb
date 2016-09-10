@@ -6,6 +6,7 @@ class TweetsController < ApplicationController
     if @tweet.save
       redirect_to root_url
     else
+      @feed_items = []
       render 'pages/index'
     end
   end
