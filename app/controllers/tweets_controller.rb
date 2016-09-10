@@ -12,4 +12,10 @@ class TweetsController < ApplicationController
 
   def destroy
   end
+
+  private
+
+    def tweet_params
+      params.require(:tweet).permit(:content)
+    end
 end
