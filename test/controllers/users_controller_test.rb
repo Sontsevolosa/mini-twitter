@@ -7,6 +7,6 @@ class UsersControllerTest < ActionController::TestCase
 
   test 'should get new' do
     get :new
-    assert_redirected_to login_path
+    assert_response :success
   end
 end
