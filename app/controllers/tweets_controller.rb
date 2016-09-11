@@ -13,11 +13,18 @@ class TweetsController < ApplicationController
   end
 
   def destroy
+    @tweet.destroy
+    redirect_to request.referrer || root_url
   end
 
   private
 
     def tweet_params
       params.require(:tweet).permit(:content)
+    end
+
+    def correct_user
+      @tweet = current_user.tweets.find_by(id: params[:id])
+      redirect_to root_url if @tweet.nil?
     end
 end
