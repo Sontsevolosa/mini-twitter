@@ -9,8 +9,7 @@
         = link_to "view my profile", @user
       span
         b
-          | Tweets: 
-        = @user.tweets.count
+          | Tweets: #{@user.tweets.count}
     section.stats
       = render 'shared/stats'
       - if @users.any?

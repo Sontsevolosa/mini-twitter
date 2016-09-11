@@ -7,12 +7,10 @@
     section.stats
       = render 'shared/stats'
   .col-md-8
-    == render 'follow_form' if logged_in?
+    = render 'follow_form' if logged_in?
     - if @user.tweets.any?
-      h3
-        | Tweets (
-        = @user.tweets.count
-        | )
+      h3 
+        | Tweets (#{@user.tweets.count})
       ol.tweets
         = render @tweets
       = will_paginate @tweets
