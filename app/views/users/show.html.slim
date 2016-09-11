@@ -4,7 +4,10 @@
       h1
         = gravatar_for @user
         = @user.name
+    section.stats
+      = render 'shared/stats'
   .col-md-8
+    == render 'follow_form' if logged_in?
     - if @user.tweets.any?
       h3
         | Tweets (
