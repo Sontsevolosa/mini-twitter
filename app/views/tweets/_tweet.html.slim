@@ -10,3 +10,5 @@ span.timestamp
   | Posted 
   = time_ago_in_words(tweet.created_at)
   |  ago.
+  - if current_user?(tweet.user)
+    = link_to "delete", tweet, method: :delete, data: { confirm: "Are you sure?" }
