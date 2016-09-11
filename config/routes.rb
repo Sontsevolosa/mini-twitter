@@ -9,8 +9,7 @@ Rails.application.routes.draw do
   delete 'logout' => 'sessions#destroy'
   resources :users do
     member do
-      get :following
-      get :followers
+      get :following, :followers
     end
   end
   resources :tweets, only: [:create, :destroy]
